@@ -6,7 +6,7 @@ set +a
 source .env
 start=$(date +"%s")
 #IMAGE_NAME=qrcode-generator
-docker pull hendisantika/$IMAGE_NAME:$IMAGE_TAG
+docker pull skillminer/$IMAGE_NAME:$IMAGE_TAG
 
 CONTAINER_NAME=qrcode-generator
 if [ "$(docker ps -qa -f name=$CONTAINER_NAME)" ]; then
@@ -18,7 +18,7 @@ if [ "$(docker ps -qa -f name=$CONTAINER_NAME)" ]; then
     fi
 fi
 
-docker run -d --rm -p $APP_SERVER_PORT:$APP_SERVER_PORT --name $CONTAINER_NAME hendisantika/$IMAGE_NAME:$IMAGE_TAG
+docker run -d --rm -p $APP_SERVER_PORT:$APP_SERVER_PORT --name $CONTAINER_NAME skillminer/$IMAGE_NAME:$IMAGE_TAG
 
 exit
 ENDSSH
