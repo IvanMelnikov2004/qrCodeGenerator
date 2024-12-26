@@ -1,7 +1,7 @@
 # qrCodeGenerator
 ## Как развернуть
 ### Скопировать репозиторий
-`git clone https://github.com/IvanMelnikov2004/qrCodeGenerator/tree/main`
+`https://github.com/IvanMelnikov2004/qrCodeGenerator`
 ### Перейти в проект
 `cd qrCodeGenerator`
 ### Запустить проект
