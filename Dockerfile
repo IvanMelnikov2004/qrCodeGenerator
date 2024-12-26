@@ -12,7 +12,7 @@ RUN mvn clean package
 #FROM bellsoft/liberica-openjdk-debian:21
 #FROM openjdk:21-slim
 FROM amazoncorretto:21-alpine-jdk
-LABEL maintainer="hendisantika@yahoo.co.id"
+LABEL maintainer="vanya2004.melnikov@yandex.ru"
 
 RUN mkdir /app
 
