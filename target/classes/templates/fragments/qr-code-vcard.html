@@ -1,0 +1,195 @@
+<div th:fragment="qr-code-vcard">
+    <div th:if="${qrCodeVCard != null}">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <h5>Сгенерировать QR-код для визитной карточки</h5>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-floating" id="qrCodeVCard" method="POST" name="qrCodeVCard"
+                              th:action="@{/process/vcard}" th:object="${qrCodeVCard}">
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input autofocus="true" class="form-control is-invalid" form="qrCodeVCard"
+                                               id="name"
+                                               name="name"
+                                               placeholder="Имя"
+                                               required
+                                               th:field="*{name}"
+                                               type="text"/>
+                                        <label for="name">Имя</label>
+                                        <small class="form-text text-muted-error" id="nameHelp"
+                                               th:errors="*{name}" th:if="${#fields.hasErrors('name')}"></small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control is-invalid" form="qrCodeVCard" id="lastname"
+                                               name="lastname"
+                                               placeholder="Фамилия"
+                                               required
+                                               th:field="*{lastname}"
+                                               type="text"/>
+                                        <label for="lastname">Фамилия</label>
+                                        <small class="form-text text-muted-error" id="lastnameHelp"
+                                               th:errors="*{lastname}" th:if="${#fields.hasErrors('lastname')}"></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="organisation"
+                                               name="organisation"
+                                               placeholder="Организация"
+                                               th:field="*{organisation}"
+                                               type="text"/>
+                                        <label for="organisation">Организация</label>
+                                        <small class="form-text text-muted-error" id="organisationHelp"
+                                               th:errors="*{organisation}"
+                                               th:if="${#fields.hasErrors('organisation')}"></small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="title" name="title"
+                                               placeholder="Должность"
+                                               th:field="*{title}"
+                                               type="text"/>
+                                        <label for="title">Должность</label>
+                                        <small class="form-text text-muted-error" id="titleHelp"
+                                               th:errors="*{title}" th:if="${#fields.hasErrors('title')}"></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="email1" name="email1"
+                                               placeholder="Электронная почта"
+                                               th:field="*{email1}"
+                                               type="text"/>
+                                        <label for="email1">Электронная почта</label>
+                                        <small class="form-text text-muted-error" id="email1Help"
+                                               th:errors="*{email1}" th:if="${#fields.hasErrors('email1')}"></small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="phone1" name="phone1"
+                                               placeholder="Телефон"
+                                               th:field="*{phone1}"
+                                               type="text"/>
+                                        <label for="phone1">Телефон</label>
+                                        <small class="form-text text-muted-error" id="phone1Help"
+                                               th:errors="*{phone1}" th:if="${#fields.hasErrors('phone1')}"></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <select class="form-control" id="phone1Type">
+                                            <option selected>РАБОЧИЙ</option>
+                                            <option>ДОМАШНИЙ</option>
+                                        </select>
+                                        <label for="phone1Type">Тип телефона</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="adress1Street"
+                                               name="adress1Street"
+                                               placeholder="Улица"
+                                               th:field="*{adress1Street}"
+                                               type="text"/>
+                                        <label for="adress1Street">Улица</label>
+                                        <small class="form-text text-muted-error" id="adress1StreetHelp"
+                                               th:errors="*{adress1Street}"
+                                               th:if="${#fields.hasErrors('adress1Street')}"></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="adress1Locality"
+                                               name="adress1Locality"
+                                               placeholder="Город"
+                                               th:field="*{adress1Locality}"
+                                               type="text"/>
+                                        <label for="adress1Locality">Город</label>
+                                        <small class="form-text text-muted-error" id="adress1LocalityHelp"
+                                               th:errors="*{adress1Locality}"
+                                               th:if="${#fields.hasErrors('adress1Locality')}"></small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="adress1Region"
+                                               name="adress1Region"
+                                               placeholder="Регион"
+                                               th:field="*{adress1Region}"
+                                               type="text"/>
+                                        <label for="adress1Region">Регион</label>
+                                        <small class="form-text text-muted-error" id="adress1RegionHelp"
+                                               th:errors="*{adress1Region}"
+                                               th:if="${#fields.hasErrors('adress1Region')}"></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="adress1PostalCode"
+                                               name="adress1PostalCode"
+                                               placeholder="Почтовый индекс"
+                                               th:field="*{adress1PostalCode}"
+                                               type="text"/>
+                                        <label for="adress1PostalCode">Почтовый индекс</label>
+                                        <small class="form-text text-muted-error" id="adress1PostalCodeHelp"
+                                               th:errors="*{adress1PostalCode}"
+                                               th:if="${#fields.hasErrors('adress1PostalCode')}"></small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control" form="qrCodeVCard" id="adress1Country"
+                                               name="adress1Country"
+                                               placeholder="Страна"
+                                               th:field="*{adress1Country}"
+                                               type="text"/>
+                                        <label for="adress1Country">Страна</label>
+                                        <small class="form-text text-muted-error" id="adress1CountryHelp"
+                                               th:errors="*{adress1Country}"
+                                               th:if="${#fields.hasErrors('adress1Country')}"></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-floating mb-4">
+                                        <select class="form-control" id="adress1Type">
+                                            <option selected>РАБОЧИЙ</option>
+                                            <option>ДОМАШНИЙ</option>
+                                        </select>
+                                        <label for="adress1Type">Тип адреса</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-block" data-placement="top" data-toggle="tooltip"
+                                    title="Сгенерировать QR-код">
+                                Сгенерировать &raquo;
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

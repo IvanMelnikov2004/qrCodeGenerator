@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "type": "id.my.hendisantika.qrcodegenerator.config.ApplicationProperties",
+      "sourceType": "id.my.hendisantika.qrcodegenerator.config.ApplicationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "application.app-info",
+      "type": "java.lang.String",
+      "sourceType": "id.my.hendisantika.qrcodegenerator.config.ApplicationProperties"
+    },
+    {
+      "name": "application.title",
+      "type": "java.lang.String",
+      "sourceType": "id.my.hendisantika.qrcodegenerator.config.ApplicationProperties"
+    }
+  ],
+  "hints": []
+}
